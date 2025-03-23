@@ -22,3 +22,18 @@ double get_execution_time() {
             B[i][j] = rand() % 10;
         }
     }
+    clock_t start = clock();
+    multiply_matrices(A, B, C);
+    clock_t end = clock();
+    
+    return (double)(end - start) / CLOCKS_PER_SEC;
+}
+int main() {
+    double total_time = 0.0;
+    int runs = 10;
+    for (int i = 0; i < runs; i++) {
+        total_time += get_execution_time();
+    }
+    printf("Average Execution Time (Sequential): %.6f seconds\n", total_time / runs);
+    return 0;
+}
