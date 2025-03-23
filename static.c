@@ -34,3 +34,6 @@ double get_parallel_execution_time() {
 int main() {
     double total_time = 0.0;
     int runs = 10;
+    for (int i = 0; i < runs; i++) {
+        total_time += get_parallel_execution_time();
+    }
