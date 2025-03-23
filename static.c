@@ -37,3 +37,6 @@ int main() {
     for (int i = 0; i < runs; i++) {
         total_time += get_parallel_execution_time();
     }
+    printf("Average Execution Time (Parallel): %.6f seconds\n", total_time / runs);
+    return 0;
+}
