@@ -25,3 +25,12 @@ double get_parallel_execution_time() {
             B[i][j] = rand() % 10;
         }
     }
+    double start = omp_get_wtime();
+    multiply_matrices_parallel(A, B, C);
+    double end = omp_get_wtime();
+    
+    return end - start;
+}
+int main() {
+    double total_time = 0.0;
+    int runs = 10;
